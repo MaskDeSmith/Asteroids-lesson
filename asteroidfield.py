@@ -1,8 +1,7 @@
 import pygame
 import random
-from asteroid import Asteroid
 from constants import *
-
+from asteroid import Asteroid
 
 class AsteroidField(pygame.sprite.Sprite):
     edges = [
@@ -41,7 +40,6 @@ class AsteroidField(pygame.sprite.Sprite):
         if self.spawn_timer > ASTEROID_SPAWN_RATE:
             self.spawn_timer = 0
 
-            # spawn a new asteroid at a random edge
             edge = random.choice(self.edges)
             speed = random.randint(40, 100)
             velocity = edge[0] * speed
